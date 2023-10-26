@@ -1,0 +1,3 @@
+pip install discord
+pip install BCSFE_Python
+pip install pandas
