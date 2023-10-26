@@ -1,3 +1,2 @@
 discord
-bcsfe-discord == 2.7.55
 pandas
