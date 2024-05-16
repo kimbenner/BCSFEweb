@@ -77,7 +77,7 @@
 <body>
     <h1>계정 등록</h1>
     <p>기종변경을 하여 나오는 코드와 번호를 입력해주세요.</p>
-    <form method="POST" action="/register">
+    <form method="POST" action="/bc_register">
         <input type="text" name="transfer_code" placeholder="기종변경 코드" required>
         <input type="text" name="password" placeholder="인증번호" required>
         <input type="text" name="game_version" placeholder="게임 버전" required>
@@ -89,7 +89,7 @@
         </select>
         <div class="button-container">
             <button type="submit">계정 등록</button>
-            <a href="/login">계정 복구</a>
+            <a href="/bc_login">계정 복구</a>
         </div>
     </form>
 </body>

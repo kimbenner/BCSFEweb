@@ -11,13 +11,13 @@ def randomstring():
   return "".join(random.choice(characters) for _ in range(10))
 
 app = Flask(__name__)
-app.secret_key = 'cintagramabp'  # Change this to a secure random key.
+app.secret_key = 'alpha'  # Change this to a secure random key.
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  return render_template('bcbackup.html')
   
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/bc_login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
       backupcode = request.form.get("username")
@@ -41,7 +41,7 @@ def login():
         return "업로드에 실패했습니다.\n다시 시도해주세요."
         pass
     else:
-      return render_template('login.html')
+      return render_template('bc_login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -75,10 +75,15 @@ def register():
         except:
           return "업로드에 실패했습니다. 다시 시도해주세요."
           pass
-    return render_template('register.html')
+    return render_template('bc_register.html')
 
 if __name__ == '__main__':
   def run():
     app.run(host='0.0.0.0', port=8080, debug=False)
   t = Thread(target=run)
   t.start()
+  
+
+
+
+

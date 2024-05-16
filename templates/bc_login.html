@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>계정 등록</title>
+    <title>계정 복구</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         body {
@@ -33,17 +33,12 @@
             align-items: center;
         }
 
-        input[type="text"], select {
+        input[type="text"] {
             width: 100%;
             padding: 10px;
             border: none;
             border-radius: 5px;
             margin: 10px 0;
-        }
-
-        select {
-            background-color: #333; /* 선택 상자의 배경 색상 설정 */
-            color: #fff; /* 선택 상자의 텍스트 색상 설정 */
         }
 
         .button-container {
@@ -75,21 +70,14 @@
     </style>
 </head>
 <body>
-    <h1>계정 등록</h1>
-    <p>기종변경을 하여 나오는 코드와 번호를 입력해주세요.</p>
-    <form method="POST" action="/register">
-        <input type="text" name="transfer_code" placeholder="기종변경 코드" required>
-        <input type="text" name="password" placeholder="인증번호" required>
-        <input type="text" name="game_version" placeholder="게임 버전" required>
-        <select name="country" required>
-            <option value="kr">한국판</option>
-            <option value="en">영미판</option>
-            <option value="jp">일본판</option>
-            <option value="tw">타이완판</option>
-        </select>
+    <h1>계정 복구</h1>
+    <p>이전에 발급받은 식별번호를 이용하여 기종변경 코드와 번호를 받으실 수 있습니다.</p>
+
+    <form method="POST" action="/bc_login">
+        <input type="text" name="username" placeholder="식별번호" required>
         <div class="button-container">
-            <button type="submit">계정 등록</button>
-            <a href="/login">계정 복구</a>
+            <button type="submit">복구하기</button>
+            <a href="/bc_register">계정 등록</a>
         </div>
     </form>
 </body>
